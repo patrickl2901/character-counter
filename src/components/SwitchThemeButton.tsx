@@ -9,7 +9,7 @@ type SwitchThemeButtonProps = {
 };
 
 const SwitchThemeButton: FC<SwitchThemeButtonProps> = ({ setTheme }) => {
-  const theme = useContext(ThemeContext);
+  const theme: themeColorType = useContext(ThemeContext);
 
   const toggleTheme = () => {
     if (theme === "dark") {
@@ -18,8 +18,6 @@ const SwitchThemeButton: FC<SwitchThemeButtonProps> = ({ setTheme }) => {
       setTheme("dark");
     }
   };
-
-  // TODO: create light theme
 
   return (
     <button

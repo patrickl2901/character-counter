@@ -10,7 +10,7 @@ function App() {
   const [theme, setTheme] = useState<themeColorType>("dark");
 
   return (
-    <div className="app">
+    <div className={theme === "dark" ? "app" : "appLight"}>
       <ThemeContext.Provider value={theme}>
         <Header setTheme={setTheme} />
         <h1>Analyze your text in real-time.</h1>

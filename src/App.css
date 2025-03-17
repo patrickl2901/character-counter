@@ -1,4 +1,4 @@
-#root {
+:root {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -6,6 +6,14 @@
 
 .app {
   padding: 0 1rem;
+  min-height: 100vh;
+}
+
+.appLight {
+  padding: 0 1rem;
+  min-height: 100vh;
+  color: black;
+  background-color: white;
 }
 
 .backgroundPurple {
