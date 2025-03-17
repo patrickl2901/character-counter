@@ -1,0 +1,17 @@
+.quotesImgDark {
+  width: 3rem;
+  height: 3rem;
+  margin-right: 0.5rem;
+  filter: invert();
+}
+
+.quotesImgLight {
+  width: 3rem;
+  height: 3rem;
+  margin-right: 0.5rem;
+}
+
+.headerLogoContainer {
+  display: flex;
+  align-items: center;
+}

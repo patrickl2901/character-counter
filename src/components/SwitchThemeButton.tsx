@@ -1,0 +1,46 @@
+import React, { FC, useContext } from "react";
+import circleHalfStroke from "../assets/circle-half-stroke-solid.svg";
+import styles from "../styles/SwitchThemeButton.module.css";
+import { ThemeContext } from "../context/ThemeContext";
+import { themeColorType } from "../types/themeColorType";
+
+type SwitchThemeButtonProps = {
+  setTheme: (theme: themeColorType) => void;
+};
+
+const SwitchThemeButton: FC<SwitchThemeButtonProps> = ({ setTheme }) => {
+  const theme = useContext(ThemeContext);
+
+  const toggleTheme = () => {
+    if (theme === "dark") {
+      setTheme("light");
+    } else {
+      setTheme("dark");
+    }
+  };
+
+  // TODO: create light theme
+
+  return (
+    <button
+      className={
+        theme === "dark"
+          ? styles.switchThemeButtonDark
+          : styles.switchThemeButtonLight
+      }
+      onClick={toggleTheme}
+    >
+      <img
+        src={circleHalfStroke}
+        alt="Switch Theme"
+        className={
+          theme === "dark"
+            ? styles.circleHalfStrokeImgDark
+            : styles.circleHalfStrokeImgLight
+        }
+      />
+    </button>
+  );
+};
+
+export default SwitchThemeButton;
