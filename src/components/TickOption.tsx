@@ -6,10 +6,20 @@ import { themeColorType } from "../types/themeColorType";
 type TickOptionProps = {
   label: string;
   checkboxId: string;
+  setOption: (option: boolean) => void;
 };
 
-const TickOption: FC<TickOptionProps> = ({ label, checkboxId }) => {
+const TickOption: FC<TickOptionProps> = ({ label, checkboxId, setOption }) => {
   const theme: themeColorType = useContext(ThemeContext);
+
+  const handleChecked = (event: { target: { checked: boolean } }) => {
+    if (event.target.checked == true) {
+      setOption(true);
+    } else {
+      setOption(false);
+    }
+  };
+
   return (
     <div
       className={
@@ -18,7 +28,12 @@ const TickOption: FC<TickOptionProps> = ({ label, checkboxId }) => {
           : styles.tickOptionContainerLight
       }
     >
-      <input type="checkbox" name="optionBox" id={checkboxId} />
+      <input
+        type="checkbox"
+        name="optionBox"
+        id={checkboxId}
+        onChange={handleChecked}
+      />
       <label htmlFor={checkboxId}>{label}</label>
     </div>
   );

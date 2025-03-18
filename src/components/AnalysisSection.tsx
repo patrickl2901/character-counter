@@ -3,23 +3,27 @@ import StatCard from "./StatCard";
 import StatBar from "./StatBar";
 import styles from "../styles/AnalysisSection.module.css";
 
-const AnalysisSection: FC = () => {
+type AnalysisSectionProps = {
+  parsedAmounts: Array<number>;
+};
+
+const AnalysisSection: FC<AnalysisSectionProps> = ({ parsedAmounts }) => {
   return (
     <div className={styles.analysisSectionContainer}>
       <div className={styles.cardSectionContainer}>
         <StatCard
           dataName="Total Characters"
-          data={278}
+          data={parsedAmounts[0]}
           cardBackgroundColor="backgroundPurple"
         />
         <StatCard
           dataName="Word Count"
-          data={39}
+          data={parsedAmounts[1]}
           cardBackgroundColor="backgroundYellow"
         />
         <StatCard
           dataName="Sentence Count"
-          data={4}
+          data={parsedAmounts[2]}
           cardBackgroundColor="backgroundRed"
         />
       </div>
