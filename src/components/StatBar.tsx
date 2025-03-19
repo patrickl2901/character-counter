@@ -1,4 +1,4 @@
-import React, { FC, useContext } from "react";
+import { FC, useContext } from "react";
 import styles from "../styles/StatBar.module.css";
 import { ThemeContext } from "../context/ThemeContext";
 import { themeColorType } from "../types/themeColorType";

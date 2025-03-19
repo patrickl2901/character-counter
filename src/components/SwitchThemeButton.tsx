@@ -1,4 +1,4 @@
-import React, { FC, useContext } from "react";
+import { FC, useContext } from "react";
 import circleHalfStroke from "../assets/circle-half-stroke-solid.svg";
 import styles from "../styles/SwitchThemeButton.module.css";
 import { ThemeContext } from "../context/ThemeContext";

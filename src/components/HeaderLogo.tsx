@@ -1,4 +1,4 @@
-import React, { FC, useContext } from "react";
+import { FC, useContext } from "react";
 import quoteLeftSolidImg from "../assets/quote-left-solid.svg";
 import styles from "../styles/HeaderLogo.module.css";
 import { ThemeContext } from "../context/ThemeContext";

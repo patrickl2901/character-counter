@@ -26,6 +26,7 @@
   font-family: inherit;
   background-color: #eeeeee;
   cursor: text;
+  color: black;
 }
 
 .mainTextInputLight::placeholder {

@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import { FC } from "react";
 import StatCard from "./StatCard";
 import StatBar from "./StatBar";
 import styles from "../styles/AnalysisSection.module.css";
@@ -7,6 +7,7 @@ type AnalysisSectionProps = {
   parsedAmounts: Array<number>;
 };
 
+// TODO: implement letter density feature
 const AnalysisSection: FC<AnalysisSectionProps> = ({ parsedAmounts }) => {
   return (
     <div className={styles.analysisSectionContainer}>

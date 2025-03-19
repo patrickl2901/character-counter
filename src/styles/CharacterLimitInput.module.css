@@ -1,0 +1,14 @@
+.numberInputDark {
+  margin: 0 1rem;
+}
+
+.numberInputLight {
+  background-color: #eeeeee;
+  color: black;
+  margin: 0 1rem;
+}
+
+.characterLimitInputContainer {
+  display: flex;
+  align-items: center;
+}

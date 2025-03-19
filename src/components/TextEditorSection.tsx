@@ -1,4 +1,4 @@
-import React, { FC, useState } from "react";
+import { FC, useState } from "react";
 import styles from "../styles/TextEditorSection.module.css";
 import TextEditor from "./TextEditor";
 import TickOption from "./TickOption";
@@ -24,6 +24,7 @@ const TextEditorSection: FC<TextEditorSectionProps> = ({
       <TextEditor
         setTextContent={setTextContent}
         characterLimit={characterLimit}
+        useCharacterLimit={useCharacterLimit}
       />
       <div className={styles.optionsContainer}>
         <TickOption
@@ -37,7 +38,10 @@ const TextEditorSection: FC<TextEditorSectionProps> = ({
           setOption={setUseCharacterLimit}
         />
         {useCharacterLimit ? (
-          <CharacterLimitInput setCharacterLimit={setCharacterLimit} />
+          <CharacterLimitInput
+            setCharacterLimit={setCharacterLimit}
+            characterLimit={characterLimit}
+          />
         ) : null}
         <p>Approx. reading time: less than 1 minute</p>
       </div>

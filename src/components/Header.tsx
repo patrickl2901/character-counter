@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import { FC } from "react";
 import styles from "../styles/Header.module.css";
 import SwitchThemeButton from "./SwitchThemeButton";
 import HeaderLogo from "./HeaderLogo";

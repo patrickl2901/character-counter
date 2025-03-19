@@ -6,11 +6,15 @@ import { themeColorType } from "../types/themeColorType";
 type TextEditorProps = {
   setTextContent: (content: string) => void;
   characterLimit: number;
+  useCharacterLimit: boolean;
 };
+
+// TODO: exclude spaces option should affect character limit
 
 const TextEditor: FC<TextEditorProps> = ({
   setTextContent,
   characterLimit,
+  useCharacterLimit,
 }) => {
   const theme: themeColorType = useContext(ThemeContext);
 
@@ -29,7 +33,7 @@ const TextEditor: FC<TextEditorProps> = ({
       }
       placeholder="Type something..."
       onChange={handleChange}
-      maxLength={characterLimit}
+      maxLength={useCharacterLimit ? characterLimit : -1}
     ></textarea>
   );
 };
