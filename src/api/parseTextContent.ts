@@ -16,6 +16,8 @@ export default function parseTextContent(
   return [charsCount, wordsCount, sentencesCount];
 }
 
+// TODO: fix sentence count being set to 0 if string contains two periods in succession
+
 function parseSentences(content: string): number {
   let count: number = 0;
   let contentString: string = content;

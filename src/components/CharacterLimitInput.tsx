@@ -31,7 +31,7 @@ const CharacterLimitInput: FC<CharacterLimitInputProps> = ({
           theme === "dark" ? styles.numberInputDark : styles.numberInputLight
         }
       />
-      <span>{characterLimit}</span>
+      <span>{characterLimit > 0 ? characterLimit : null}</span>
     </div>
   );
 };

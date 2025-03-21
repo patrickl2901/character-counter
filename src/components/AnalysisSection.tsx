@@ -5,10 +5,14 @@ import styles from "../styles/AnalysisSection.module.css";
 
 type AnalysisSectionProps = {
   parsedAmounts: Array<number>;
+  charSet: Map<string, number>;
 };
 
-// TODO: implement letter density feature
-const AnalysisSection: FC<AnalysisSectionProps> = ({ parsedAmounts }) => {
+// TODO: make letter density section collapsible, showing 5 entries initially
+const AnalysisSection: FC<AnalysisSectionProps> = ({
+  parsedAmounts,
+  charSet,
+}) => {
   return (
     <div className={styles.analysisSectionContainer}>
       <div className={styles.cardSectionContainer}>
@@ -30,7 +34,16 @@ const AnalysisSection: FC<AnalysisSectionProps> = ({ parsedAmounts }) => {
       </div>
       <div className={styles.letterDensitySectionContainer}>
         <h2>Letter Density</h2>
-        <StatBar dataName="E" amount={40} percentage={16.06} />
+        {Array.from(charSet.entries()).map((entry) => {
+          const [key, value] = entry;
+          return (
+            <StatBar
+              dataName={key}
+              amount={value}
+              percentage={Number(((value / parsedAmounts[0]) * 100).toFixed(1))}
+            />
+          );
+        })}
       </div>
     </div>
   );

@@ -6,6 +6,7 @@ import TextEditorSection from "./components/TextEditorSection.tsx";
 import { ThemeContext } from "./context/ThemeContext.tsx";
 import { themeColorType } from "./types/themeColorType.ts";
 import parseTextContent from "./api/parseTextContent.ts";
+import createCharSet from "./api/createCharSet.ts";
 
 function App() {
   const [theme, setTheme] = useState<themeColorType>("dark");
@@ -13,6 +14,7 @@ function App() {
   const [excludeSpaces, setExcludeSpaces] = useState<boolean>(false);
   const [useCharacterLimit, setUseCharacterLimit] = useState<boolean>(false);
   const parsedAmounts = parseTextContent(textContent, excludeSpaces);
+  const charSet: Map<string, number> = createCharSet(textContent);
 
   return (
     <div className={theme === "dark" ? "app" : "appLight"}>
@@ -25,7 +27,7 @@ function App() {
           setUseCharacterLimit={setUseCharacterLimit}
           useCharacterLimit={useCharacterLimit}
         />
-        <AnalysisSection parsedAmounts={parsedAmounts} />
+        <AnalysisSection parsedAmounts={parsedAmounts} charSet={charSet} />
       </ThemeContext.Provider>
     </div>
   );
