@@ -1,18 +1,23 @@
-import { FC } from "react";
+import { FC, useState } from "react";
 import StatCard from "./StatCard";
 import StatBar from "./StatBar";
 import styles from "../styles/AnalysisSection.module.css";
+import SeeMoreButton from "./SeeMoreButton";
 
 type AnalysisSectionProps = {
   parsedAmounts: Array<number>;
   charSet: Map<string, number>;
 };
 
-// TODO: make letter density section collapsible, showing 5 entries initially
 const AnalysisSection: FC<AnalysisSectionProps> = ({
   parsedAmounts,
   charSet,
 }) => {
+  const [isCollapsed, setIsCollapsed] = useState<boolean>(true);
+  const entriesToDisplay = isCollapsed
+    ? Array.from(charSet.entries()).slice(0, 5)
+    : Array.from(charSet.entries());
+
   return (
     <div className={styles.analysisSectionContainer}>
       <div className={styles.cardSectionContainer}>
@@ -34,16 +39,17 @@ const AnalysisSection: FC<AnalysisSectionProps> = ({
       </div>
       <div className={styles.letterDensitySectionContainer}>
         <h2>Letter Density</h2>
-        {Array.from(charSet.entries()).map((entry) => {
-          const [key, value] = entry;
-          return (
-            <StatBar
-              dataName={key}
-              amount={value}
-              percentage={Number(((value / parsedAmounts[0]) * 100).toFixed(1))}
-            />
-          );
-        })}
+        {entriesToDisplay.map(([key, value]) => (
+          <StatBar
+            dataName={key}
+            amount={value}
+            percentage={Number(((value / parsedAmounts[0]) * 100).toFixed(1))}
+          />
+        ))}
+        <SeeMoreButton
+          isCollapsed={isCollapsed}
+          setIsCollapsed={setIsCollapsed}
+        />
       </div>
     </div>
   );

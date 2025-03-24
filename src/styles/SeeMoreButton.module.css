@@ -1,0 +1,23 @@
+.seeMoreButton {
+  display: flex;
+  align-items: center;
+  border: 0;
+  background: transparent;
+}
+
+.seeMoreButton h3 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.buttonArrowDown {
+  font-size: 1.5rem;
+  margin: 0 0 0 0.5rem;
+  transform: translateY(-0.4rem) rotate(180deg);
+}
+
+.buttonArrowUp {
+  font-size: 1.5rem;
+  margin: 0 0 0 0.5rem;
+  transform: translateY(0.4rem);
+}

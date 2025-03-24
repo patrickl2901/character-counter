@@ -23,5 +23,9 @@ export default function createCharSet(
     }
   }
 
-  return charSet;
+  // sort by value in descending order
+  const result: Map<string, number> = new Map(
+    [...charSet.entries()].sort((a, b) => b[1] - a[1])
+  );
+  return result;
 }
