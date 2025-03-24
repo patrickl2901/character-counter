@@ -3,12 +3,14 @@ import styles from "../styles/TextEditorSection.module.css";
 import TextEditor from "./TextEditor";
 import TickOption from "./TickOption";
 import CharacterLimitInput from "./CharacterLimitInput";
+import calculateReadingTime from "../api/calculateReadingTime";
 
 type TextEditorSectionProps = {
   setTextContent: (content: string) => void;
   setExcludeSpaces: (spaces: boolean) => void;
   setUseCharacterLimit: (characterLimit: boolean) => void;
   useCharacterLimit: boolean;
+  parsedAmounts: Array<number>;
 };
 
 const TextEditorSection: FC<TextEditorSectionProps> = ({
@@ -16,6 +18,7 @@ const TextEditorSection: FC<TextEditorSectionProps> = ({
   setExcludeSpaces,
   setUseCharacterLimit,
   useCharacterLimit,
+  parsedAmounts,
 }) => {
   const [characterLimit, setCharacterLimit] = useState<number>(-1);
 
@@ -43,7 +46,7 @@ const TextEditorSection: FC<TextEditorSectionProps> = ({
             characterLimit={characterLimit}
           />
         ) : null}
-        <p>Approx. reading time: less than 1 minute</p>
+        <p>Approx. reading time: {calculateReadingTime(parsedAmounts[1])}</p>
       </div>
     </div>
   );

@@ -13,7 +13,10 @@ function App() {
   const [textContent, setTextContent] = useState<string>("");
   const [excludeSpaces, setExcludeSpaces] = useState<boolean>(false);
   const [useCharacterLimit, setUseCharacterLimit] = useState<boolean>(false);
-  const parsedAmounts = parseTextContent(textContent, excludeSpaces);
+  const parsedAmounts: Array<number> = parseTextContent(
+    textContent,
+    excludeSpaces
+  );
   const charSet: Map<string, number> = createCharSet(textContent);
 
   return (
@@ -26,6 +29,7 @@ function App() {
           setExcludeSpaces={setExcludeSpaces}
           setUseCharacterLimit={setUseCharacterLimit}
           useCharacterLimit={useCharacterLimit}
+          parsedAmounts={parsedAmounts}
         />
         <AnalysisSection parsedAmounts={parsedAmounts} charSet={charSet} />
       </ThemeContext.Provider>
