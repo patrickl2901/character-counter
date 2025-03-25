@@ -1,7 +1,7 @@
-import React, { FC, useContext } from "react";
+import { FC, useContext } from "react";
 import styles from "../styles/TickOption.module.css";
 import { ThemeContext } from "../context/ThemeContext";
-import { themeColorType } from "../types/themeColorType";
+import { type themeColorType } from "../types/themeColorType";
 
 type TickOptionProps = {
   label: string;

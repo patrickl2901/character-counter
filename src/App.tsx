@@ -4,7 +4,7 @@ import AnalysisSection from "./components/AnalysisSection.tsx";
 import Header from "./components/Header.tsx";
 import TextEditorSection from "./components/TextEditorSection.tsx";
 import { ThemeContext } from "./context/ThemeContext.tsx";
-import { themeColorType } from "./types/themeColorType.ts";
+import { type themeColorType } from "./types/themeColorType.ts";
 import parseTextContent from "./api/parseTextContent.ts";
 import createCharSet from "./api/createCharSet.ts";
 

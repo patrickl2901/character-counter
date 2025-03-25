@@ -2,7 +2,7 @@ import { FC } from "react";
 import styles from "../styles/Header.module.css";
 import SwitchThemeButton from "./SwitchThemeButton";
 import HeaderLogo from "./HeaderLogo";
-import { themeColorType } from "../types/themeColorType";
+import { type themeColorType } from "../types/themeColorType";
 
 type HeaderProps = {
   setTheme: (theme: themeColorType) => void;

@@ -1,7 +1,7 @@
 import { FC, useContext } from "react";
 import styles from "../styles/StatBar.module.css";
 import { ThemeContext } from "../context/ThemeContext";
-import { themeColorType } from "../types/themeColorType";
+import { type themeColorType } from "../types/themeColorType";
 
 type StatBarProps = {
   dataName: string;

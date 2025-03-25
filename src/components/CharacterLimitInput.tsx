@@ -1,7 +1,7 @@
 import { ChangeEvent, FC, useContext } from "react";
 import { ThemeContext } from "../context/ThemeContext";
 import styles from "../styles/CharacterLimitInput.module.css";
-import { themeColorType } from "../types/themeColorType";
+import { type themeColorType } from "../types/themeColorType";
 
 type CharacterLimitInputProps = {
   setCharacterLimit: (limit: number) => void;
